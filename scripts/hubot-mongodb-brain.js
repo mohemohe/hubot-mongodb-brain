@@ -13,6 +13,8 @@
 //   Sho Hashimoto <hashimoto@shokai.org>
 //   mohemohe
 
+//@ts-check
+
 const { MongoClient } = require('mongodb');
 const Url = require('url');
 
@@ -76,11 +78,15 @@ class MongoDB {
 
     this.robot.brain.setAutoSave(true);
   }
+
+  close() {
+    this.client.close();
+  }
 }
 
 module.exports = (robot) => {
   const mongodb = new MongoDB(robot);
-  robot.brain.on('close', () => client.close());
+  robot.brain.on('close', () => mongodb.close());
   robot.brain.on('save', data => mongodb.save(data));
 
   mongodb.load();
