@@ -1,38 +1,28 @@
 {
   "name": "hubot-mongodb-brain",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "MongoDB brain for Hubot. Support MongoLab and MongoHQ on heroku",
-  "main": "scripts/hubot-mongodb-brain.coffee",
+  "main": "scripts/hubot-mongodb-brain.js",
   "scripts": {
-    "test": "grunt test",
-    "watch": "grunt"
   },
   "keywords": [
     "hubot",
     "brain",
     "mongodb"
   ],
-  "author": "Sho Hashimoto <hashimoto@shokai.org>",
+  "author": "Sho Hashimoto <hashimoto@shokai.org>, mohemohe",
   "license": "MIT",
   "dependencies": {
-    "lodash": "*",
     "mongodb": "*"
   },
   "devDependencies": {
-    "coffee-errors": "*",
-    "coffee-script": "^1.9",
-    "grunt": "*",
-    "grunt-cli": "*",
-    "grunt-notify": "*",
-    "grunt-coffeelint": "*",
-    "grunt-contrib-watch": "*"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shokai/hubot-mongodb-brain.git"
+    "url": "https://github.com/mohemohe/hubot-mongodb-brain.git"
   },
   "bugs": {
-    "url": "https://github.com/shokai/hubot-mongodb-brain/issues"
+    "url": "https://github.com/mohemohe/hubot-mongodb-brain/issues"
   },
-  "homepage": "https://github.com/shokai/hubot-mongodb-brain"
+  "homepage": "https://github.com/mohemohe/hubot-mongodb-brain"
 }

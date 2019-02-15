@@ -1,10 +1,7 @@
 # hubot-mongodb-brain
 MongoDB brain for Hubot. Support MongoLab and MongoHQ on Heroku.
 
-- https://github.com/shokai/hubot-mongodb-brain
-- https://npmjs.com/package/hubot-mongodb-brain
-
-[![Circle CI](https://circleci.com/gh/shokai/hubot-mongodb-brain.svg?style=svg)](https://circleci.com/gh/shokai/hubot-mongodb-brain)
+- https://github.com/mohemohe/hubot-mongodb-brain
 
 ## difference betweet `redis-brain`
 
@@ -14,13 +11,10 @@ Hubot's default `redis-brain` saves all data into one large blob (It's not using
 ## Requirements
 
 - mongodb
-- coffee-script 1.9+
 
 ## Install
 
     % npm install hubot-mongodb-brain -save
-    % npm install coffee-script@">=1.9" -save
-
 
 ### edit `external-script.json`
 
@@ -31,12 +25,6 @@ Hubot's default `redis-brain` saves all data into one large blob (It's not using
 ### enable mongolab on heroku
 
     % heroku addons:create mongolab
-
-
-## Export / Import
-
-- https://github.com/shokai/hubot-mongodb-brain/tree/master/export-import-tools
-
 
 ## Develop
 
