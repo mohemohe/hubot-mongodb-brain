@@ -14,7 +14,7 @@ Hubot's default `redis-brain` saves all data into one large blob (It's not using
 
 ## Install
 
-    % npm install hubot-mongodb-brain -save
+    % yarn add https://github.com/mohemohe/hubot-mongodb-brain.git
 
 ### edit `external-script.json`
 
