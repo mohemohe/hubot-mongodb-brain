@@ -4,7 +4,6 @@
 //
 // Dependencies:
 //   "mongodb": "*"
-//   "lodash" : "*"
 //
 // Configuration:
 //   MONGODB_URL or MONGOLAB_URI or MONGOHQ_URL or 'mongodb://localhost:27017/hubot'
@@ -65,18 +64,21 @@ class MongoDB {
   }
 
   async save(data) {
-    this.robot.brain.setAutoSave(false);
+    const privateKeys = Object.keys(data._private || {});
+    if (privateKeys.length > 0) {
+      this.robot.brain.setAutoSave(false);
 
-    const bulk = this.collection.initializeUnorderedBulkOp();
-    Object.keys(data._private).forEach((key) => {
-      bulk.find({key}).upsert().updateOne({
-        key,
-        value: data._private[key],
+      const bulk = this.collection.initializeUnorderedBulkOp();
+      Object.keys(privateKeys).forEach((key) => {
+        bulk.find({key}).upsert().updateOne({
+          key,
+          value: data._private[key],
+        });
       });
-    });
-    await bulk.execute();
+      await bulk.execute();
 
-    this.robot.brain.setAutoSave(true);
+      this.robot.brain.setAutoSave(true);
+    }
   }
 
   close() {
