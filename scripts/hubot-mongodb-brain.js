@@ -69,7 +69,7 @@ class MongoDB {
       this.robot.brain.setAutoSave(false);
 
       const bulk = this.collection.initializeUnorderedBulkOp();
-      Object.keys(privateKeys).forEach((key) => {
+      privateKeys.forEach((key) => {
         bulk.find({key}).upsert().updateOne({
           key,
           value: data._private[key],
